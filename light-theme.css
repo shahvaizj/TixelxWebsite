@@ -1,0 +1,104 @@
+:root {
+  --ink: #171816;
+  --paper: #f4f1e8;
+  --lime: #ef3b3b;
+  --muted: #696b65;
+  --line: #d8d4c9;
+}
+
+body { background: var(--paper); color: var(--ink); }
+.site-header { background: rgba(244, 241, 232, .88); backdrop-filter: blur(14px); }
+.site-header nav { color: #61635e; }
+.header-email { border-color: #a5a298; }
+.brand small { color: #777970; }
+.eyebrow { color: #676961; }
+.hero { background: radial-gradient(circle at 78% 48%, rgba(239, 59, 59, .16), transparent 27%); }
+.hero h1 em, .policy h1 em, .contact h2 em { color: #df2e38; }
+.lede, .manifesto > div, .project-copy > p:not(.project-type), .steps p, .policy article { color: #666861; }
+.plain-link { color: #40413d; border-color: #9c9a91; }
+.button { background: #ef3b3b; color: #fff; }
+.button:hover { background: #d92732; }
+.idea-machine { border-color: #c8c4b9; background: radial-gradient(circle at center, rgba(239, 59, 59, .22), transparent 49%); }
+.idea-machine::before, .idea-machine::after { background: #d0ccc1; }
+.orbit { border-color: #aaa89f; }
+.machine-core { background: #ef3b3b; color: #fff; box-shadow: 0 0 70px rgba(239, 59, 59, .22); }
+.machine-label { background: #faf8f1; border-color: #c8c5bb; color: #5d5e59; box-shadow: 0 4px 15px rgba(28, 30, 25, .06); }
+.spark, .status i { background: #df2e38; }
+.manifesto > p span { color: #9a9a93; }
+.project-type, .status { color: #6c6e68; }
+.index, .project-no, .steps li > span { color: #cf2934; }
+.project-zikr { background: radial-gradient(circle at 73% 49%, rgba(239, 59, 59, .20), transparent 31%); }
+.phone { box-shadow: 0 30px 75px rgba(43, 44, 38, .18), 0 0 0 1px #a9a79f; }
+.dashboard { box-shadow: 0 35px 75px rgba(44, 45, 38, .18); }
+.contact > a { border-color: #aaa79d; }
+.footer-brand { color: var(--ink); }
+.policy article > p { color: #30312e; }
+.policy article h2 { color: #1b1c19; }
+.policy-title > p:last-child { color: #72746d; }
+.policy article a { color: #bd202c; }
+.metric-row em { color: #b9202c; }
+.chart .line { stroke: #df2e38; }
+::selection { background: #ef3b3b; color: #fff; }
+
+@media (max-width: 920px) {
+  .site-header nav { display: none; }
+}
+
+.project-zikr { grid-template-columns: 31% 69%; overflow: hidden; }
+.project-zikr .project-copy { position: relative; z-index: 2; }
+.zikr-gallery {
+  min-width: 0;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(135px, 1fr));
+  gap: 12px;
+  padding: 42px 0 42px 30px;
+}
+.zikr-gallery figure {
+  margin: 0;
+  min-width: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d4d0c5;
+  box-shadow: 0 18px 42px rgba(43, 44, 38, .13);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.zikr-gallery figure:nth-child(2), .zikr-gallery figure:nth-child(4) { transform: translateY(28px); }
+.zikr-gallery figure:hover { transform: translateY(-5px); box-shadow: 0 24px 52px rgba(43, 44, 38, .20); }
+.zikr-gallery figure:nth-child(2):hover, .zikr-gallery figure:nth-child(4):hover { transform: translateY(20px); }
+.zikr-gallery img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+.zikr-gallery figcaption {
+  padding: 11px 10px;
+  color: #4b4c47;
+  font: 600 8px/1.25 var(--sans);
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 920px) {
+  .project-zikr { grid-template-columns: 1fr; }
+  .zikr-gallery { padding: 10px 0 65px; grid-template-columns: repeat(4, minmax(190px, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; }
+  .zikr-gallery figure { scroll-snap-align: start; }
+}
+
+@media (max-width: 520px) {
+  .zikr-gallery { margin-right: -18px; grid-template-columns: repeat(4, 75vw); padding-right: 18px; }
+}
+
+.brand-logo-wrap {
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  flex: 0 0 auto;
+  background: transparent;
+}
+.brand-logo-wrap img { display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
+
+@media (max-width: 520px) {
+  .brand-logo-wrap { width: 66px; height: 66px; }
+  .brand-logo-wrap img { width: 100%; height: 100%; }
+}
